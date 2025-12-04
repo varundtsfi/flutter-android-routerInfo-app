@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/user.dart';
+import 'logout_page.dart'; // Import the logout page
 
 class WelcomePage extends StatelessWidget {
   final User user;
@@ -7,7 +8,11 @@ class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key, required this.user});
 
   void _logout(BuildContext context) {
-    Navigator.pushReplacementNamed(context, '/');
+    // Navigate to LogoutPage instead of directly to login
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const LogoutPage()),
+    );
   }
 
   @override
